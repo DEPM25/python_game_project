@@ -5,7 +5,6 @@ from level import Level
 class Game:
     def __init__(self):
 
-        
         pygame.init()
         self.screen = pygame.display.set_mode((WIDTH,HEIGHT))
         pygame.display.set_caption('Fight Club Legends')
@@ -19,6 +18,9 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_m:
+                        self.level.toggle_menu()
 
             self.screen.fill('black')
             self.level.run()
